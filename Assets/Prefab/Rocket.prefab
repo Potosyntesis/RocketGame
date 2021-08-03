@@ -5471,6 +5471,7 @@ MonoBehaviour:
   rocketRotate: 50
   rb: {fileID: 0}
   rocketExhaust: {fileID: 91517968468038459}
+  go: {fileID: 3073908869130893197, guid: 680b4a8dd0276c44b9eb9c24c962fd0d, type: 3}
 --- !u!82 &-5158417337191947935
 AudioSource:
   m_ObjectHideFlags: 0

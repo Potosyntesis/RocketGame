@@ -7,10 +7,11 @@ public class RocketObject : MonoBehaviour
     [SerializeField]public float rocketThrust = 2f;
     [SerializeField] public float rocketRotate = 2f;
     bool isDead = false;
+    bool isTransition = false;
     AudioSource audio;
     public Rigidbody rb;
     [SerializeField]ParticleSystem rocketExhaust;
-
+    [SerializeField]GameObject go;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class RocketObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isDead)
+        if (!isDead || !isTransition)
         {
             rocketControls();
         }
@@ -40,6 +41,7 @@ public class RocketObject : MonoBehaviour
                 break;
             case "Finish":
                 Debug.Log("Game End");
+                isTransition = true;
                 StartCoroutine(NextGame());
                 break;
             case "Respawn":
@@ -51,13 +53,15 @@ public class RocketObject : MonoBehaviour
     IEnumerator RelodGame()
     {
         yield return new WaitForSeconds(2f);
+         //transform.position = new Vector3()l
         SceneManager.LoadScene("SampleScene");
     }
 
     IEnumerator NextGame()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("SceneSomething");
+        //SceneManager.LoadScene("SceneSomething");
+        SceneManager.LoadScene(1);
     }
 
     private void rocketControls()
@@ -97,6 +101,11 @@ public class RocketObject : MonoBehaviour
             rb.freezeRotation = true;
             rb.transform.Rotate(Vector3.left * rocketRotate * Time.deltaTime);
             rb.freezeRotation = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Instantiate(go, transform, true);
         }
     }
 

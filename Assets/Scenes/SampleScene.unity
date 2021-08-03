@@ -498,6 +498,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6720312278113821749, guid: 6fa5589fec3253c4b9fae8eff1eaf608, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1022115237028530974, guid: 6fa5589fec3253c4b9fae8eff1eaf608, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -548,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7660699812073377040, guid: 6fa5589fec3253c4b9fae8eff1eaf608, type: 3}
       propertyPath: rocketThrust
-      value: 5000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 8188883572647868341, guid: 6fa5589fec3253c4b9fae8eff1eaf608, type: 3}
       propertyPath: m_Name
